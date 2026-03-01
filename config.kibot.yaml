@@ -50,13 +50,3 @@ outputs:
           output: output/%f_3d_render_bottom.png
       point_of_view:
         - rotate_x: 200
-  - name: JLCPCB Production Files
-    type: compress
-    dir: output
-    options:
-      format: ZIP
-      files:
-        - from_output: jlcpcb_gerbers
-          dest: /
-        - from_output: jlcpcb_drill
-          dest: /
