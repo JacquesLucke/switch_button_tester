@@ -1,6 +1,9 @@
 kibot:
   version: 1
 
+import:
+  - file: JLCPCB
+
 outputs:
   - name: Render PCB top side
     type: pcbdraw
@@ -47,7 +50,13 @@ outputs:
           output: output/%f_3d_render_bottom.png
       point_of_view:
         - rotate_x: 200
-  - name: Generate JLCPCB Gerbers
-    type: jlcpcb
+  - name: JLCPCB Production Files
+    type: compress
+    dir: output
     options:
-      output: output/%f_gerbers_jlcpcb.zip
+      format: zip
+      files:
+        - from_output: jlcpcb_gerbers
+          dest: /
+        - from_output: jlcpcb_drill
+          dest: /
