@@ -47,3 +47,7 @@ outputs:
           output: output/%f_3d_render_bottom.png
       point_of_view:
         - rotate_x: 200
+  - name: Generate JLCPCB Gerbers
+    type: jlcpcb
+    options:
+      output: output/%f_gerbers_jlcpcb.zip
